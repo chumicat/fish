@@ -1,4 +1,5 @@
 function fishsave
+funcsave $argv
 set pth $PWD 
 cd ~/.config/fish
 git status
