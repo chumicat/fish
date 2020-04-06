@@ -1,5 +1,5 @@
 function gitsave
-git status
-git add .
-git commit --amend -m "autosave"
+  git status
+  git add .
+  git commit --amend -m "autosave"
 end

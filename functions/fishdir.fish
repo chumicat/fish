@@ -1,3 +1,3 @@
 function fishdir
-cd ~/.config/fish
+  cd ~/.config/fish
 end

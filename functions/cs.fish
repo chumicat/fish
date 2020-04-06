@@ -1,3 +1,3 @@
 function cs
-    phpcs --standard=PSR12 $argv
+  phpcs --standard=PSR12 $argv
 end

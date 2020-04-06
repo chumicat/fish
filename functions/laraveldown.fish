@@ -1,3 +1,3 @@
 function laraveldown
-docker-compose down
+  docker-compose down
 end

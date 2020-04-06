@@ -1,3 +1,3 @@
 function phptest
-php ./vendor/bin/phpunit tests
+  php ./vendor/bin/phpunit tests
 end

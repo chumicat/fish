@@ -1,3 +1,3 @@
 function gitlog
-git log --oneline --graph $argv
+  git log --oneline --graph $argv
 end

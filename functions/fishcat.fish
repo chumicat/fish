@@ -1,6 +1,7 @@
 function fishcat
-set ori $PWD
-cd ~/.config/fish/functions
-cat $argv[1].fish
-cd $ori
+  if test -e ~/.config/fish/functions/$argv[1]
+    cat ~/.config/fish/functions/$argv[1]
+  else
+    cat ~/.config/fish/functions/$argv[1].fish
+  end
 end
