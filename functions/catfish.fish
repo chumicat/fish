@@ -1,4 +1,4 @@
-function fishcat
+function catfish
   if test -e ~/.config/fish/functions/$argv[1]
     cat ~/.config/fish/functions/$argv[1]
   else

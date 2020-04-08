@@ -1,3 +1,3 @@
-function fishdir
+function cdfish
   cd ~/.config/fish
 end

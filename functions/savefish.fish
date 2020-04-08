@@ -1,4 +1,4 @@
-function fishsave
+function savefish
   set pth $PWD
   cd ~/.config/fish
   git status

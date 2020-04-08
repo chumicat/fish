@@ -1,4 +1,4 @@
-function fishvi
+function vifish
   if test -e ~/.config/fish/functions/$argv[1]
     vi ~/.config/fish/functions/$argv[1]
   else
