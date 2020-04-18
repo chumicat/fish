@@ -17,12 +17,20 @@ case "$1" in
     # lara update|reinstall         # Update lara script
     update | reinstall)
         if test -d ~/.config/fish; then 
-            echo 'a'
+            curl https://raw.githubusercontent.com/chumicat/lara/master/laraInstallFish.fish --output laraInstallFish.fish && fish laraInstallFish.fish
         else
-            echo 'b'
+            curl https://raw.githubusercontent.com/chumicat/lara/master/laraInstallBash.sh --output laraInstallBash.sh && bash laraInstallBash.sh
         fi
         ;;
+        
     # lara remove                   # Remove lara script
+    remove)
+        if test -d ~/.config/fish; then 
+            sudo rm -rf ~/opt/lara
+        else
+            rm -rf ~/.config/fish/functions/lara.fish ~/.config/fish/scripts/lara
+        fi
+        ;;
 
     # # ===== PROJECT CONTROL COMMAND ===== #
     # lara new <projName>           # New a laravel project
