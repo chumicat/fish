@@ -7,6 +7,42 @@ gitUrl=git@github.com:$gitName/$projectName.git
 siteDomain=laravel.test
 
 case "$1" in
+    # # ===== LARA GENERAL COMMAND ===== #
+    # lara list                     # List all command
+    list) # list all command
+        grep -E "^(    # )" $0 | sed -e 's/    # //'
+        ;;
+    # lara status                   # Check HEAD
+    # lara version                  # Show script version
+    # lara update|reinstall         # Update lara script
+    update | reinstall)
+        if test -d ~/.config/fish; then 
+            echo 'a'
+        else
+            echo 'b'
+        fi
+        ;;
+    # lara remove                   # Remove lara script
+
+    # # ===== PROJECT CONTROL COMMAND ===== #
+    # lara new <projName>           # New a laravel project
+    # lara init <projName>          # Initial a laravelproject after clone
+    # lara switch <projName>        # Switch HEAD to project
+    # lara distribute <projName>    # Add "automatic initial script" to project
+
+    # # ===== IN PROJECT COMMAND ===== #
+    # lara up                       # Up HEAD project
+    # lara down                     # down HEAD project
+    # lara restart                  # restart HEAD project
+    # lara downup                   # downup HEAD project
+
+
+
+    switch) ＃ switch to specific laravel project
+        ;;
+
+
+    # # ===== HADN"T DEAL ===== #
     new | init) # alias
         bash $0 proj $1 $2
         ;;
@@ -53,8 +89,9 @@ case "$1" in
             php artisan migrate:status;
         "
         cd ../
-        
-        if [[ "$3" == '-'*'c'* ]]; then # -c case, down docker-compose
+
+        # -c case, down docker-compose
+        if [[ "$3" == '-'*'c'* ]]; then 
             bash "$0" down
         else
             bash "$0" site
@@ -111,7 +148,8 @@ case "$1" in
         ;;
     
     up) # docker-comose up
-        if [[ "$2" == '-'*'d'* ]]; then # -d case, launch docker daemno before docker-comose
+        # -d case, launch docker daemno before docker-comose
+        if [[ "$2" == '-'*'d'* ]]; then
             test $(uname) == 'Darwin' && open -a docker
             for i in {30..1}; do echo "Rest $i s to go"; sleep 1; done
         fi
